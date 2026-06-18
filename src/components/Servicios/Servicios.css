@@ -1,0 +1,44 @@
+.servicios { background: var(--color-fondo); }
+
+.servicios__header { text-align: center; margin-bottom: 56px; }
+
+.servicios__grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.servicios__card {
+  background: #fff;
+  border-radius: var(--radius-card);
+  border-top: 4px solid var(--color-verde);
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.25s;
+}
+.servicios__card:hover { box-shadow: var(--shadow-card-hover); }
+
+.servicios__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--color-azul);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.servicios__card-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-azul);
+  margin-bottom: 8px;
+}
+
+.servicios__card-text { font-size: 14px; }
+
+@media (max-width: 1024px) { .servicios__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .servicios__grid { grid-template-columns: 1fr; } }

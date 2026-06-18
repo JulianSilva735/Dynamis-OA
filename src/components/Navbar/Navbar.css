@@ -1,0 +1,92 @@
+.navbar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.navbar_scrolled {
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 2px 18px rgba(0, 59, 115, 0.12);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.navbar__brand { display: flex; align-items: center; gap: 12px; }
+.navbar__brand-text { text-align: left; line-height: 1.15; }
+
+.navbar__name {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  color: #fff; /* sobre el hero */
+}
+.navbar_scrolled .navbar__name { color: var(--color-azul); }
+.navbar__name-accent { color: var(--color-verde); }
+
+.navbar__sas {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--color-plata);
+}
+.navbar_scrolled .navbar__sas { color: var(--color-gris); }
+
+.navbar__links { display: flex; align-items: center; gap: 28px; }
+
+.navbar__link {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #fff;
+  transition: opacity 0.2s;
+}
+.navbar__link:hover { opacity: 0.7; }
+.navbar_scrolled .navbar__link { color: var(--color-azul); }
+
+.navbar__cta {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--color-verde);
+  padding: 10px 20px;
+  border-radius: 999px;
+  transition: transform 0.2s;
+}
+.navbar__cta:hover { transform: scale(1.05); }
+.navbar__cta_full { width: 100%; padding: 13px; }
+
+.navbar__toggle { display: none; color: #fff; }
+.navbar_scrolled .navbar__toggle { color: var(--color-azul); }
+
+.navbar__mobile {
+  display: none;
+  background: #fff;
+  box-shadow: 0 12px 24px rgba(0, 59, 115, 0.15);
+  padding: 8px 20px 16px;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.navbar__mobile-link {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-azul);
+  text-align: left;
+  padding: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .navbar__links { display: none; }
+  .navbar__toggle { display: block; }
+  .navbar__mobile { display: flex; }
+}

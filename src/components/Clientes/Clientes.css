@@ -1,0 +1,31 @@
+.clientes { background: var(--color-azul); }
+
+.clientes__inner { text-align: center; }
+
+.clientes__title { color: #fff; margin-bottom: 48px; }
+
+.clientes__grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.clientes__card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  border-radius: var(--radius-card);
+  padding: 28px;
+  text-align: left;
+}
+
+.clientes__quote { color: #fff; margin-bottom: 16px; }
+
+.clientes__autor {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-verde);
+}
+
+@media (max-width: 768px) { .clientes__grid { grid-template-columns: 1fr; } }

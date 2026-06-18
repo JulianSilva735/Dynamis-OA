@@ -1,0 +1,19 @@
+:root {
+  --color-azul: #003b73;        /* Azul Energía */
+  --color-azul-oscuro: #002a52;
+  --color-verde: #00c853;       /* Verde Eléctrico */
+  --color-gris: #4a4a4a;        /* Gris Titanio */
+  --color-plata: #e5e5e5;       /* Plata Tecnológica */
+  --color-fondo: #f5f7fa;
+  --color-whatsapp: #25d366;
+
+  --font-display: "Montserrat", sans-serif; /* Títulos */
+  --font-body: "Roboto", sans-serif;        /* Textos */
+
+  --radius-card: 16px;
+  --shadow-card: 0 2px 12px rgba(0, 59, 115, 0.08);
+  --shadow-card-hover: 0 8px 24px rgba(0, 59, 115, 0.16);
+  --max-width: 1152px;
+
+  scroll-padding-top: 80px;
+}
