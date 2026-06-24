@@ -18,6 +18,12 @@ import p02Instalado from "../assets/P02_cargador_instalado.png";
 import p02Portatil from "../assets/P02_cargador_portatil_y_conectores.png";
 import wp21Instalado from "../assets/WP21_cargador_instalado.png";
 import wp21Variantes from "../assets/WP21_wallbox_variantes.png";
+import instCargador from "../assets/monto1.jpeg";
+import instCuarto from "../assets/monto2.jpeg";
+import instParqueadero from "../assets/monto3.jpeg";
+import instLuminaria from "../assets/monto4.jpeg";
+import prueba1 from "../assets/prueba1.jpeg";
+import prueba2 from "../assets/prueba2.jpeg";
 
 /* ─────────────────────────────────────────
    1. CONTACTO Y REDES  ← lo que más cambia
@@ -72,9 +78,42 @@ export const VALORES: Valor[] = [
    5. PROYECTOS  (placeholders — cambiar por casos reales)
    ───────────────────────────────────────── */
 export const PROYECTOS: Proyecto[] = [
-  { tag: "Residencial", titulo: "Carga en conjunto residencial", descripcion: "12 puntos de carga inteligente con gestión de demanda compartida.", stat: "12 cargadores" },
-  { tag: "Comercial", titulo: "Centro comercial — zona EV", descripcion: "Estación de carga rápida DC para visitantes con monitoreo remoto.", stat: "60 kW DC" },
-  { tag: "Industrial", titulo: "Electrificación de flota logística", descripcion: "Infraestructura para flota de última milla con carga nocturna programada.", stat: "8 vehículos" },
+  {
+    imagen: instCargador,
+    alt: "Técnico de DYNAMIS OA instalando un cargador para vehículo eléctrico",
+    titulo: "Instalación de cargador EV",
+    descripcion: "Montaje y conexión certificada de cargador en parqueadero residencial.",
+  },
+  {
+    imagen: instCuarto,
+    alt: "Técnico de DYNAMIS OA trabajando en cuarto técnico eléctrico",
+    titulo: "Adecuación de cuarto técnico",
+    descripcion: "Canalización y acometida eléctrica para infraestructura de carga.",
+  },
+  {
+    imagen: instParqueadero,
+    alt: "Equipo de DYNAMIS OA trabajando en parqueadero",
+    titulo: "Proyecto en parqueadero",
+    descripcion: "Instalación de puntos de carga en zona común de parqueadero.",
+  },
+  {
+    imagen: instLuminaria,
+    alt: "Técnico de DYNAMIS OA instalando canalización en techo",
+    titulo: "Canalización e iluminación",
+    descripcion: "Trabajo eléctrico y de canalización en infraestructura existente.",
+  },
+  {
+    imagen: prueba1,
+    alt: "Cargador ElectryGo instalado en pared de parqueadero por DYNAMIS OA",
+    titulo: "Punto de carga terminado",
+    descripcion: "Cargador para vehículo eléctrico instalado y listo para usar en parqueadero residencial, con protección eléctrica dedicada.",
+  },
+  {
+    imagen: prueba2,
+    alt: "Detalle de cargador ElectryGo conectado con cableado organizado",
+    titulo: "Instalación lista y ordenada",
+    descripcion: "Montaje final con conector tipo 2, gestión de cable y tablero de protección, cumpliendo normativa RETIE.",
+  },
 ];
 
 /* ─────────────────────────────────────────

@@ -12,10 +12,10 @@ export interface Valor {
 }
 
 export interface Proyecto {
-  tag: string;
+  imagen: string;
+  alt: string;
   titulo: string;
   descripcion: string;
-  stat: string;
 }
 
 export interface Testimonio {

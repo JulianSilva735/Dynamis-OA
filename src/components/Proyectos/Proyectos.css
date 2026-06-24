@@ -1,57 +1,82 @@
 .proyectos__header { text-align: center; margin-bottom: 56px; }
 
-.proyectos__grid {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+/* Contenedor del carrusel: track + flechas a los lados */
+.proyectos__carrusel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
+/* Track deslizable horizontal con scroll-snap */
+.proyectos__track {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 8px 4px 16px; /* espacio para la sombra */
+  scrollbar-width: none; /* Firefox: oculta barra */
+}
+.proyectos__track::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+
 .proyectos__card {
+  flex: 0 0 320px; /* ancho fijo de tarjeta, no se encoge */
+  scroll-snap-align: start;
   border: 1px solid var(--color-plata);
   border-radius: var(--radius-card);
   overflow: hidden;
   box-shadow: var(--shadow-card);
+  background: #fff;
   transition: box-shadow 0.25s;
 }
 .proyectos__card:hover { box-shadow: var(--shadow-card-hover); }
 
+/* Imagen: altura fija uniforme para que todas se vean parejas */
 .proyectos__cover {
-  height: 160px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, var(--color-azul), #006d4e);
+  height: 260px;
+  background: #000;
 }
-.proyectos__cover svg { opacity: 0.8; }
 
-.proyectos__body { padding: 24px; }
-
-.proyectos__tag {
-  font-family: var(--font-display);
-  font-size: 12px;
-  font-weight: 700;
-  color: #fff;
-  background: var(--color-verde);
-  padding: 4px 12px;
-  border-radius: 999px;
+.proyectos__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* recorta para llenar sin deformar */
 }
+
+.proyectos__body { padding: 20px 24px 24px; }
 
 .proyectos__title {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 18px;
   color: var(--color-azul);
-  margin: 12px 0 8px;
+  margin-bottom: 8px;
 }
 
-.proyectos__text { font-size: 14px; margin-bottom: 12px; }
+.proyectos__text { font-size: 14px; }
 
-.proyectos__stat {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 14px;
-  color: var(--color-verde);
+/* Flechas de navegación */
+.proyectos__nav {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-azul);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-card);
+  transition: background 0.2s, transform 0.2s;
+}
+.proyectos__nav:hover {
+  background: var(--color-verde);
+  transform: scale(1.1);
 }
 
-@media (max-width: 768px) { .proyectos__grid { grid-template-columns: 1fr; } }
+@media (max-width: 768px) {
+  /* En móvil ocultamos las flechas: se desliza con el dedo */
+  .proyectos__nav { display: none; }
+  .proyectos__card { flex-basis: 80%; } /* asoma la siguiente tarjeta */
+}

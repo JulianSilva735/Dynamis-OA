@@ -45,8 +45,3 @@ npm run build    # build de producción en /dist
    `src/components/Contacto/Contacto.tsx` con Formspree o EmailJS.
 3. **Proyectos:** reemplaza los placeholders en `src/data/content.ts`
    con los casos reales del cliente y agrega fotos en `Proyectos.tsx`.
-
-## Deploy
-
-Conecta el repo a [Vercel](https://vercel.com) o [Netlify](https://netlify.com)
-— detectan Vite automáticamente. Gratis para sitios estáticos.
