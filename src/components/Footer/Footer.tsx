@@ -1,5 +1,5 @@
 import Logo from "../Logo/Logo";
-import { Instagram } from "lucide-react";
+import { Instagram, Facebook } from "lucide-react";
 import { CONTACTO } from "../../data/config";
 import "./Footer.css";
 
@@ -14,6 +14,13 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer">
             <Instagram size={22} />
+          </a>
+          <a className="footer__social"
+            href={CONTACTO.facebook}
+            aria-label="Facebook de DYNAMIS OA"
+            target="_blank"
+            rel="noopener noreferrer">
+            <Facebook size={22} />
           </a>
           <Logo size={36} dark />
           <div className="footer__brand-text">

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { CONTACTO } from "../../data/config";
 import "./Contacto.css";
 
 interface FormState {
@@ -10,26 +11,48 @@ interface FormState {
 }
 
 const DATOS_CONTACTO = [
-  { icon: Phone, texto: "(312) 853-7307" },
-  { icon: Mail, texto: "contacto@dynamisoa.com" },
-  { icon: MapPin, texto: "Pereira, Armenia, Manizales, Cali (Colombia)" },
+  { icon: Phone, texto: CONTACTO.telefono },
+  { icon: Mail, texto: CONTACTO.correo },
+  { icon: MapPin, texto: CONTACTO.ciudad },
 ];
 
+const FORM_VACIO: FormState = { nombre: "", correo: "", telefono: "", mensaje: "" };
+
 export default function Contacto() {
-  const [form, setForm] = useState<FormState>({ nombre: "", correo: "", telefono: "", mensaje: "" });
-  const [enviado, setEnviado] = useState(false);
+  const [form, setForm] = useState<FormState>(FORM_VACIO);
+  const [estado, setEstado] = useState<"idle" | "enviando" | "ok" | "error">("idle");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.nombre || !form.correo) return;
-    // TODO: conectar con Formspree / EmailJS
-    setEnviado(true);
-    setTimeout(() => setEnviado(false), 4000);
-    setForm({ nombre: "", correo: "", telefono: "", mensaje: "" });
+
+    setEstado("enviando");
+    try {
+      const res = await fetch(CONTACTO.formspree, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          nombre: form.nombre,
+          correo: form.correo,
+          telefono: form.telefono,
+          mensaje: form.mensaje,
+        }),
+      });
+
+      if (res.ok) {
+        setEstado("ok");
+        setForm(FORM_VACIO);
+        setTimeout(() => setEstado("idle"), 5000);
+      } else {
+        setEstado("error");
+      }
+    } catch {
+      setEstado("error");
+    }
   };
 
   return (
@@ -88,12 +111,23 @@ export default function Contacto() {
             placeholder="Cuéntanos sobre tu proyecto…"
             rows={4}
           />
+
           <button
             type="submit"
-            className={`contacto__submit ${enviado ? "contacto__submit_ok" : ""}`}
+            className={`contacto__submit ${estado === "ok" ? "contacto__submit_ok" : ""}`}
+            disabled={estado === "enviando"}
           >
-            {enviado ? "✓ Mensaje enviado" : "Enviar mensaje"}
+            {estado === "enviando" && "Enviando…"}
+            {estado === "ok" && "✓ Mensaje enviado"}
+            {estado === "error" && "Error, intenta de nuevo"}
+            {estado === "idle" && "Enviar mensaje"}
           </button>
+
+          {estado === "error" && (
+            <p className="contacto__error">
+              No se pudo enviar. Escríbenos por WhatsApp al {CONTACTO.telefono}.
+            </p>
+          )}
         </form>
       </div>
     </section>

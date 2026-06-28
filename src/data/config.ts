@@ -29,11 +29,13 @@ import prueba2 from "../assets/prueba2.jpeg";
    1. CONTACTO Y REDES  ← lo que más cambia
    ───────────────────────────────────────── */
 export const CONTACTO = {
-  whatsapp: "573128537307",
-  telefono: "3128537307",
+  whatsapp: "573148085166",
+  telefono: "3148085166",
   correo: "contacto@dynamisoa.com",
   ciudad: "Pereira, Armenia, Manizales, Cali Colombia",
-  instagram: "https://www.instagram.com/jramosse_/",
+  instagram: "https://www.instagram.com/dynamisoa/?hl=es-la",
+  facebook: "https://www.facebook.com/profile.php?id=61591415333741",
+  formspree: "https://formspree.io/f/xkolbdzq"
 };
 
 /* ─────────────────────────────────────────

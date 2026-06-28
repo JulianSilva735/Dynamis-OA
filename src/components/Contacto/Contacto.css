@@ -71,6 +71,13 @@
 .contacto__submit:hover { transform: scale(1.02); }
 .contacto__submit_ok { background: var(--color-azul); }
 
+.contacto__error {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #c0392b;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .contacto__inner { grid-template-columns: 1fr; }
 }
