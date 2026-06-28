@@ -1,4 +1,4 @@
-import { TESTIMONIOS } from "../../data/content";
+import { TESTIMONIOS } from "../../data/config";
 import "./Clientes.css";
 
 export default function Clientes() {

@@ -1,4 +1,4 @@
-import { SERVICIOS } from "../../data/content";
+import { SERVICIOS } from "../../data/config";
 import "./Servicios.css";
 
 export default function Servicios() {

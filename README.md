@@ -43,5 +43,5 @@ npm run build    # build de producción en /dist
    por el número real (formato internacional sin "+", ej: `573001234567`).
 2. **Formulario de contacto:** conecta `handleSubmit` en
    `src/components/Contacto/Contacto.tsx` con Formspree o EmailJS.
-3. **Proyectos:** reemplaza los placeholders en `src/data/content.ts`
+3. **Proyectos:** reemplaza los placeholders en `src/data/config.ts`
    con los casos reales del cliente y agrega fotos en `Proyectos.tsx`.

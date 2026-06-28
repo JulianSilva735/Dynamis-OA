@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { PRODUCTOS } from "../../data/content";
+import { PRODUCTOS } from "../../data/config";
 import "./Producto.css";
 
 export default function Productos() {

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Logo from "../Logo/Logo";
-import { NAV_ITEMS } from "../../data/content";
+import { NAV_ITEMS } from "../../data/config";
 import "./Navbar.css";
 
 export default function Navbar() {
